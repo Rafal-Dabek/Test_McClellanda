@@ -1,56 +1,4 @@
-function display(id) { 
 
-  var checkRadio = document.querySelector('input[name="Question"]:checked');
-      
-
-  if(checkRadio != null) {
-      
-          
-         var question=id.slice(0, 1);
-          
-        
-          var number=id.slice(2, 3);
-          var point=id.slice(4, 5);
-         
-
-        for(var m=1;m<4;m++){
-          
-          for(var n=1;n<4;n++){
-          
-            for(var k=1;k<4;k++){//czyszczenie
-              
-
-                if(  !(  document.getElementById(question + "_1_"+k.toString()   ).checked ||  document.getElementById(question + "_2_"+k.toString()  ).checked ||document.getElementById(question + "_3_"+k.toString()  ).checked)){
-                  console.log("yay");
-                 (document.getElementById(question + "_1_" +k ).disabled) = false;
-                   (document.getElementById(question + "_2_" +k ).disabled) = false;
-                   (document.getElementById(question+ "_3_" +k ).disabled )= false;
-                }
-                
-              
-            }
-
-            
-
-
-            for(var k=1;k<4;k++){//disabledowanie 
-              for(var l=1;l<4;l++){
-                if(k!=number && l==point)document.getElementById(question + "_"+k.toString() +"_"+ l.toString()  ).disabled = true;
-                
-              }
-            }
-            
-
-          }
-        }
- 
-  }
-  
-  else {
-      document.getElementById("disp").innerHTML
-          = "No one selected";
-  }
-}
 
 
 function done(){
@@ -114,17 +62,3 @@ else
 }
 
 
-function reset(id) {
-
-  for(var k=1;k<4;k++){//czyszczenie
-    for(var l=1;l<4;l++){
-
-      document.getElementById(id + "_"+k.toString() +"_"+ l.toString()  ).disabled = false;
-      document.getElementById(id + "_"+k.toString() +"_"+ l.toString()  ).checked = false;
-      //document.getElementById(id + "_"+k.toString() +"_"+ l.toString()  ).checked = false;
-
-      //document.getElementById("0_1_3").disabled = false;
-    }
-  }
-
-} 
