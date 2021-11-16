@@ -1,6 +1,7 @@
 
 
 
+
 function done(){
   var achivement=0;
   var control=0;
@@ -44,7 +45,7 @@ membership+=parseInt(p[i+2]);
 
 
 
-if(achivement==0 &&control==0 && membership==0)
+if(achivement==0 &&control==0 && membership==0||(  isNaN(achivement) || isNaN(control)|| isNaN(membership)) )
 {
   alert ("Wszystkie pola muszą być uzupełnione!");
 }
